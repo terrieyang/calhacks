@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171007124447) do
   create_table "inventories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "recipes", force: :cascade do |t|
