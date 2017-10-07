@@ -26,8 +26,9 @@ class RecipesController < ApplicationController
 		if @recipe.save
 			redirect_to @recipe, notice: 'Recipe successfully created!'
 			render :show
-		else
-			render :new, :alert @recipes.error
+		# else
+		# 	render :new, :alert @recipes.errors
+		end
 	end
 
 	#delete recipe
@@ -37,5 +38,6 @@ class RecipesController < ApplicationController
 
 	def recipe_params
 		params.require(:recipe).permit(:name, :servings, :rating, :target, :time)
+	end
 
 end

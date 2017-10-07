@@ -1,0 +1,19 @@
+<h1>Recipes</h1>
+
+<%@recipes.each do |recipe| %>
+	<h2><%= recipe.name %></h2>
+	<table>
+          <tr>
+            <th>Rating</th>
+            <td><%= recipe.rating %></td>
+          </tr>
+          <tr>
+            <th>Servings</th>
+            <td><%= recipe.servings %></td>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <td><%= recipe.time %></td>
+          </tr>
+        </table>
+  <% end %>
