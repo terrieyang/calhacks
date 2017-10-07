@@ -6,12 +6,12 @@ class IngredientsController < ApplicationController
 
 	#show info for one ingredient
 	def show
-		@ingredients = Ingredient.find(params[:id])
+		@ingredient = Ingredient.find(params[:id])
 	end
 
 	#form for a new ingredient
 	def new
-		@ingredients = Ingredient.new
+		@ingredient = Ingredient.new
 	end
 
 	#edit an ingredient
@@ -21,10 +21,10 @@ class IngredientsController < ApplicationController
 
 	#creates the new ingredient
 	def create
-		@ingredients = Ingredient.new(ingredient_params)
+		@ingredient = Ingredient.new(ingredient_params)
 		if @ingredient.save
 			redirect_to @ingredient, notice: 'Ingredient successfully added!'
-			render :show
+			# render :show
 		# else
 		# 	render :new, :alert @recipes.errors
 		end
@@ -35,7 +35,7 @@ class IngredientsController < ApplicationController
 		@ingredient.destroy
 	end
 
-	def recipe_params
-		params.require(:ingredient).permit(:name, :location)
+	def ingredient_params
+		params.require(:ingredient).permit(:name, :location, :category)
 	end
 end
