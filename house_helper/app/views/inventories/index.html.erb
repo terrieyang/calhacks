@@ -1,8 +1,9 @@
 <h1>Inventories</h1>
 
-<%@inventories.each do |inventory|%>
-<%= link_to inventory.name, inventories_path(inventory)%>
+<%@inventory.each do |inventory|%>
+<%= link_to inventory.name, inventory_path(inventory)%> <br />
 <%end%>
 <footer>
+<br />
 <%= link_to 'Return to Home', home_path, class: 'button' %>
 </footer>

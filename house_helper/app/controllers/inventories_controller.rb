@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
 
 	def index
-		@inventories = Inventory.all
+		@inventory = Inventory.all
 	end
 
 	#show info for inventory
