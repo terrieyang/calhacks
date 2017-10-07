@@ -36,13 +36,15 @@ class InventoriesController < ApplicationController
 			redirect_to @inventory, notice: 'Inventory successfully created!'
 			render :show
 		# else
-		# 	render :new, :alert @inventories.errors
+			render :new
 		end
 	end
 
 	#delete inventory
 	def destroy
+		@inventory = Inventory.find(params[:id])
 		@inventory.destroy
+		redirect_to inventories_url, alert: "Inventory successfully deleted!"
 	end
 
 	def inventory_params

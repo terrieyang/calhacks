@@ -1,0 +1,14 @@
+<%= form_for(@inventory) do |f| %>
+	<fieldset>
+	    <ol>
+	        <%= f.label :name %>
+	        <%= f.text_field :name, autofocus: true %><br />
+
+	    </ol>
+	    <p>
+	      <%= f.submit %>
+	      <%= link_to "Cancel", inventories_path, class: 'button' %>
+	      </li>	
+	    </p>
+	</fieldset>
+<% end %>
