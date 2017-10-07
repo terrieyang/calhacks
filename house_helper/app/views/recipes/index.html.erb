@@ -16,4 +16,7 @@
             <td><%= recipe.time %></td>
           </tr>
         </table>
-  <% end %>
+     <%= link_to 'Edit', edit_recipe_path(recipe), class: 'button' %> |
+     <%= link_to 'Destroy', recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+

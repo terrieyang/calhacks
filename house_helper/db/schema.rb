@@ -27,4 +27,12 @@ ActiveRecord::Schema.define(version: 20171007101831) do
     t.integer  "time"
   end
 
+  create_table "ingredients", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "location"
+    t.string   "category"
+  end
+
 end
