@@ -16,8 +16,18 @@ class IngredientsController < ApplicationController
 
 	#edit an ingredient
 	def edit
-
+		@ingredient = Ingredient.find(params[:id])
 	end
+
+	#update ingredient
+	def update
+	    @ingredient = Ingredient.find(params[:id])
+	    if @ingredient.update(ingredient_params)
+	      redirect_to @ingredient, notice: "Ingredient successfully updated!"
+	    else
+	      render :edit
+	    end
+	 end
 
 	#creates the new ingredient
 	def create
@@ -25,14 +35,16 @@ class IngredientsController < ApplicationController
 		if @ingredient.save
 			redirect_to @ingredient, notice: 'Ingredient successfully added!'
 			# render :show
-		# else
-		# 	render :new, :alert @recipes.errors
+		else
+			render :new
 		end
 	end
 
 	#delete ingredient
 	def destroy
+		@ingredient = Ingredient.find(params[:id])
 		@ingredient.destroy
+		redirect_to ingredients_url, alert: "Ingredient successfully deleted!"
 	end
 
 	def ingredient_params

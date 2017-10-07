@@ -2,3 +2,7 @@ Ingredient Name: <%= @ingredient.name %><br />
 Location: <%= @ingredient.location %> <br />
 Category: <%= @ingredient.category %><br />
 <%= link_to "All Ingredients", ingredients_path%>
+<%= link_to 'Edit', edit_ingredient_path(@ingredient), class: 'button' %>
+<%= link_to 'Delete', @ingredient, 
+                  class: 'button',
+                  method: :delete, data: { confirm: 'Are you sure?' } %>
