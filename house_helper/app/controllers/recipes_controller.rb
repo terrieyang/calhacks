@@ -1,5 +1,8 @@
 class RecipesController < ApplicationController
 	#list all recipes
+
+	autocomplete :ingredient, :name, :full => true
+	
 	def index
 		@recipes = Recipe.all
 	end
@@ -12,6 +15,7 @@ class RecipesController < ApplicationController
 	#form for a new recipe
 	def new
 		@recipe = Recipe.new
+		@hash = {}
 	end
 
 	#edit a recipe

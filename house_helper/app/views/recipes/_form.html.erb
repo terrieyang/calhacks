@@ -14,8 +14,11 @@
 	        <%= f.label :target %>
 	        <%= f.text_field :target, autofocus: true %><br />
 	        
-	         <%= f.label :time %>
+	        <%= f.label :time %>
 	        <%= f.text_field :time, autofocus: true %><br />
+
+	        <%= f.label :Ingredients %><br>
+	        <%= f.autocomplete_field :ingredient_ids, autocomplete_ingredient_name_recipes_path %>
 
 	    </ol>
 	    <p>
