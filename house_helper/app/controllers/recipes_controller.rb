@@ -24,7 +24,6 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 		if @recipe.save
 			redirect_to @recipe, notice: 'Recipe successfully created!'
-			render :show
 		# else
 		# 	render :new, :alert @recipes.errors
 		end
@@ -32,7 +31,9 @@ class RecipesController < ApplicationController
 
 	#delete recipe
 	def destroy
+		@recipe = Recipe.find(params[:id])
 		@recipe.destroy
+    	redirect_to recipes_url, alert: "Recipe successfully deleted!"
 	end
 
 	def recipe_params
