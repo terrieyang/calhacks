@@ -1,0 +1,11 @@
+<h1>Ingredients</h1>
+
+<%@ingredients.each do |ingredient| %>
+	<h2><%= ingredient.name %></h2>
+	<table>
+          <tr>
+            <th>Location</th>
+            <td><%= ingredient.location %></td>
+          </tr>
+        </table>
+  <% end %>
