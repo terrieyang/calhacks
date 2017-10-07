@@ -12,4 +12,6 @@
             <td><%= ingredient.category %></td>
           </tr>
         </table>
+      <%= link_to 'Edit', edit_ingredient_path(ingredient), class: 'button'%>  
+      <%= link_to 'Delete', ingredient, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %> 
   <% end %>
