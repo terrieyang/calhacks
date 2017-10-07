@@ -2,7 +2,15 @@
 Rating: <%= @recipe.rating %> <br />
 Servings: <%= @recipe.servings %><br />
 Target: <%= @recipe.target %><br />
-Time: <%= @recipe.time %><br />
+Time: <%= @recipe.time%><br />
+<br>
+<h3>Ingredients:</h3>
+<%@recipe.ingredients.each do |ingredient| %>
+	<%= ingredient.name %> <br>
+<%end%>
+
+<br>
+
 <%= link_to "All Recipes", recipes_path%> |
 <%= link_to 'Edit', edit_recipe_path(@recipe), class: 'button' %> |
 <%= link_to 'Destroy', @recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
