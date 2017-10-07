@@ -1,0 +1,27 @@
+<%= form_for(@recipe) do |f| %>
+	<fieldset>
+	    <ol>
+	        <%= f.label :name %>
+	        <%= f.text_field :name, autofocus: true %><br />
+
+	        <%= f.label :rating %>
+	        <%= f.text_field :rating, autofocus: true %><br />
+
+
+	        <%= f.label :servings %>
+	        <%= f.text_field :servings, autofocus: true %><br />
+	        
+	        <%= f.label :target %>
+	        <%= f.text_field :target, autofocus: true %><br />
+	        
+	         <%= f.label :time %>
+	        <%= f.text_field :time, autofocus: true %><br />
+
+	    </ol>
+	    <p>
+	      <%= f.submit %>
+	      <%= link_to "Cancel", recipes_path, class: 'button' %>
+	      </li>
+	    </p>
+	</fieldset>
+<% end %>
