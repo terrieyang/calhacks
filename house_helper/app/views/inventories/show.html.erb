@@ -1,6 +1,6 @@
-Inventory Name: <%= @inventory.name %><br />
+<h1><b>Inventory Name: <%= @inventory.name %></b></h1><br />
 <%= link_to 'Edit', edit_inventory_path(@inventory), class: 'button' %>
-
+<%= link_to 'Delete', @inventory, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %> 
 <br />
 <br />
 <!-- <%= link_to 'Add New Inventory', new_inventory_path, class: 'button' %> <br /> <-->
