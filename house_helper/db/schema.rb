@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(version: 20171007224229) do
   create_table "recipes", force: :cascade do |t|
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.integer  "ingredient_count", default: 10
     t.string   "name"
     t.integer  "servings"
     t.float    "rating"
     t.integer  "target"
     t.integer  "time"
+    t.integer  "ingredient_count", default: 10
   end
 
 end
