@@ -1,0 +1,21 @@
+Sorting by date, name, popularity
+
+Search by ingredients (filters)
+
+Have people rate recipes/success of recipe
+
+For list of ingredients: separate model
+
+recipe pull from ingredient
+ingredient send to shopping list
+  have location as well
+
+Shopping list per week - 
+  create shopping list first 
+  select which recipes and that will create shopping list
+when you do recipe - the ingredients will be sent to shopping list
+
+Inventory:
+  vs. shopping list - shopping list only have what you NEED to buy
+  ingredients by category 
+  inventory for each category
