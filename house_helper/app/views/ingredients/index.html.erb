@@ -1,5 +1,7 @@
 <h1>Ingredients</h1>
 
+<%= link_to 'Add New Ingredient', new_ingredient_path, class: 'button' %>
+
 <%@ingredients.each do |ingredient| %>
 	<h2><%= ingredient.name %></h2>
 	<table>
