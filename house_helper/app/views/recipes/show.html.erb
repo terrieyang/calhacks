@@ -3,4 +3,6 @@ Rating: <%= @recipe.rating %> <br />
 Servings: <%= @recipe.servings %><br />
 Target: <%= @recipe.target %><br />
 Time: <%= @recipe.time %><br />
-<%= link_to "All Recipes", recipes_path%>
+<%= link_to "All Recipes", recipes_path%> |
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: 'button' %> |
+<%= link_to 'Destroy', @recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
