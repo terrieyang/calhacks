@@ -18,8 +18,6 @@ ActiveRecord::Schema.define(version: 20171007211506) do
     t.string   "name"
     t.string   "location"
     t.string   "category"
-    t.integer  "recipe_id"
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "inventories", force: :cascade do |t|

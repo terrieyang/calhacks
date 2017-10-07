@@ -19,8 +19,8 @@
           </tr>
         </table>
      <%= link_to 'Edit', edit_recipe_path(recipe), class: 'button' %> |
-     <%= link_to 'Destroy', recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+     <%= link_to 'Delete', @recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 <br>
 <footer>
 <%= link_to 'Return to Home', home_path, class: 'button' %>
