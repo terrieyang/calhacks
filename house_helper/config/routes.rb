@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :ingredients
 
-  resources :recipes
-
   root 'home#index'
 
   get 'home' => 'home#index'
