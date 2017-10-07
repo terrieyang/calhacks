@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
 	#list all recipes
 	def index
 		@recipes = Recipe.all
