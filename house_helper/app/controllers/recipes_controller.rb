@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 	def new
 		@recipe = Recipe.new
 		# @ingredients = Ingredient.all
-		@recipe.ingredients.new
+		@recipe.ingredients.build
 	end
 
 	#edit a recipe
@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
 
 	#update recipe
 	def update
-		@recipe = Recipe.find(params[:id])
+			@recipe = Recipe.find(params[:id])
 	    if params[:add_ingredient]
 	    	# rebuild the ingredient attributes that doesn't have an id
 	    	
@@ -64,9 +64,8 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 	    if params[:add_ingredient]
 	      # add empty ingredient associated with @recipe
+	      
 	      @recipe.ingredients.build
-	      puts("hello")
-	      puts(@recipe.ingredients.count)
 
 	    elsif params[:remove_ingredient]
 	      # nested model that have _destroy attribute = 1 automatically deleted by rails
