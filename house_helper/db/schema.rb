@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 20171008020853) do
     t.string   "name"
     t.string   "location"
     t.string   "category"
+    t.integer  "recipe_id"
+    t.date     "date"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "ingredients_inventories", id: false, force: :cascade do |t|
@@ -39,12 +42,12 @@ ActiveRecord::Schema.define(version: 20171008020853) do
   create_table "recipes", force: :cascade do |t|
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.integer  "ingredient_count", default: 10
     t.string   "name"
     t.integer  "servings"
     t.float    "rating"
     t.integer  "target"
     t.integer  "time"
+    t.integer  "ingredient_count", default: 10
   end
 
   create_table "shopping_lists", force: :cascade do |t|

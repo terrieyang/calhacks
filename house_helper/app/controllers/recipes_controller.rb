@@ -14,8 +14,8 @@ class RecipesController < ApplicationController
 	#form for a new recipe
 	def new
 		@recipe = Recipe.new
-		@ingredients = Ingredient.all
-		@recipe.ingredients.build 
+		# @ingredients = Ingredient.all
+		@recipe.ingredients.new
 	end
 
 	#edit a recipe
@@ -64,9 +64,10 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 	    if params[:add_ingredient]
 	      # add empty ingredient associated with @recipe
+	      @recipe.ingredients.build
 	      puts("hello")
-	      @recipe.ingredients.push(Ingredient.new)
 	      puts(@recipe.ingredients.count)
+
 	    elsif params[:remove_ingredient]
 	      # nested model that have _destroy attribute = 1 automatically deleted by rails
 	    else
