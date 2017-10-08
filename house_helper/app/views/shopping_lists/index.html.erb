@@ -1,0 +1,16 @@
+<h1>Shopping Lists</h1>
+
+<%= link_to 'Add New Shopping List', new_shopping_list_path, class: 'button' %>
+
+<%@shopping_lists.each do |shopping_list| %>
+
+	<h2><%= shopping_list.date %></h2>
+	<table>
+
+        </table>
+      <%= link_to 'Edit', edit_shopping_list_path(shopping_list), class: 'button'%>  
+      <%= link_to 'Delete', shopping_list, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <% end %>
+<footer>
+<%= link_to 'Return to Home', home_path, class: 'button' %>
+</footer>

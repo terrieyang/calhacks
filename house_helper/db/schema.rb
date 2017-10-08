@@ -47,4 +47,10 @@ ActiveRecord::Schema.define(version: 20171008020853) do
     t.integer  "time"
   end
 
+  create_table "shopping_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "date"
+  end
+
 end

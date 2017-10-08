@@ -1,0 +1,13 @@
+<%= form_for(@shopping_list) do |f| %>
+	<fieldset>
+	    <ol>
+	        <%= f.label :date %>
+	        <%= f.date_field :date, autofocus: true %><br />     
+	    </ol>
+	    <p>
+	      <%= f.submit %>
+	      <%= link_to "Cancel", shopping_lists_path, class: 'button' %>
+	      </li>
+	    </p>
+	</fieldset>
+<% end %>

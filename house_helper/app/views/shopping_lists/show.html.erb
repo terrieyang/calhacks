@@ -1,0 +1,6 @@
+Date: <%= @shopping_list.date %><br />
+<%= link_to 'All Shopping Lists', shopping_lists_path%>
+<%= link_to 'Edit', edit_shopping_list_path(@shopping_list), class: 'button' %>
+<%= link_to 'Delete', @shopping_list, 
+                  class: 'button',
+                  method: :delete, data: { confirm: 'Are you sure?' } %>
