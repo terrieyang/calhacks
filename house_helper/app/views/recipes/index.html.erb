@@ -3,7 +3,7 @@
 <%= link_to 'Create New Recipe', new_recipe_path, class: 'button' %>
 
 <%@recipes.each do |recipe| %>
-	<h2><%= recipe.name %></h2>
+  <h2><%= link_to recipe.name, recipe_path(recipe), class: 'button' %> </h2>
 	<table>
           <tr>
             <th>Rating</th>
@@ -19,6 +19,9 @@
           </tr>
         </table>
      <%= link_to 'Edit', edit_recipe_path(recipe), class: 'button' %> |
-     <%= link_to 'Destroy', recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-
+     <%= link_to 'Delete', recipe, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<br>
+<footer>
+<%= link_to 'Return to Home', home_path, class: 'button' %>
+</footer>

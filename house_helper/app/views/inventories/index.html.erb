@@ -1,9 +1,15 @@
 <h1>Inventories</h1>
 
-<%= link_to 'Create New Inventory', new_inventory_path, class: 'button' %>
-
 <%@inventories.each do |inventory|%>
-<h2><%= link_to inventory.name, :controller => :ingredients, :action => :index %></h2>
+<!-- <h3><%= link_to inventory.name, :controller => :ingredients, :action => :index %></h3> -->
+<h2><%= link_to inventory.name, inventory_path(inventory), class: 'button' %> </h2>
 <%= link_to 'Edit', edit_inventory_path(inventory), class: 'button' %> |
 <%= link_to 'Destroy', inventory, class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<br />
 <%end%>
+
+<h3><%= link_to 'Add New Inventory', new_inventory_path, class: 'button' %></h3>
+<footer>
+<%= link_to 'Return to Home', home_path, class: 'button' %>
+</footer>

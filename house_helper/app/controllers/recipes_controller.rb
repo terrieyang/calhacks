@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
 	#list all recipes
+
+	autocomplete :ingredient, :name, :full => true
 	def index
 		@recipes = Recipe.all
 	end
@@ -12,6 +14,7 @@ class RecipesController < ApplicationController
 	#form for a new recipe
 	def new
 		@recipe = Recipe.new
+		@hash = {}
 	end
 
 	#edit a recipe
@@ -47,7 +50,7 @@ class RecipesController < ApplicationController
 	end
 
 	def recipe_params
-		params.require(:recipe).permit(:name, :servings, :rating, :target, :time)
+		params.require(:recipe).permit(:name, :servings, :rating, :target, :time, :ingredient_count)
 	end
 
 end

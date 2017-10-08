@@ -4,6 +4,7 @@ class Ingredient < ApplicationRecord
 	validates :name, uniqueness: true, presence: true
 	validates :location, uniqueness: false
 	validates :category, uniqueness: false
+	has_and_belongs_to_many :recipes
 
 	def self.populate
 	  	csv_file = Rails.root + 'lib/assets/ingredients.csv'
