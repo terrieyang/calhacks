@@ -34,8 +34,8 @@ class InventoriesController < ApplicationController
 		@inventory = Inventory.new(inventory_params)
 		if @inventory.save
 			redirect_to @inventory, notice: 'Inventory successfully created!'
-			render :show
-		# else
+			# render :show
+		else
 			render :new
 		end
 	end
