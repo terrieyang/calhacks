@@ -17,12 +17,20 @@
 	        <%= f.label :time %>
 	        <%= f.text_field :time, autofocus: true %><br />
 
-	        <%= f.label :ingredient_count %>
-	        <%= f.text_field :ingredient_count, autofocus: true %><br />
-
 	        <%= f.label :Ingredients %><br>
-	        <%= f.autocomplete_field :ingredient_ids, autocomplete_ingredient_name_recipes_path %>
-
+			<% f.fields_for @recipe.ingredients do |ing| %>
+			    <p>
+			      <%= ing.label :ing_name %>
+					<%= f.collection_select :ingredient_count, Ingredient.all, 
+                        :id, :name, { include_blank: true }%>
+			      <%= ing.check_box :destroy %>
+			      <%= ing.label :destroy, 'delete' %>
+			    </p>
+			  <% end -%>
+			  <p>
+			<%= f.submit 'Add ingredient', :name => "add_ingredient" %>
+    		<%= f.submit 'Delete checked ingredients', :name => "remove_ingredient" %>
+    		</p>
 
 	    </ol>
 	    <p>
